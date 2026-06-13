@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
   async headers() {
     return [
       {
-        // Berlaku untuk semua halaman di website Anda
         source: '/:path*',
         headers: [
           {
@@ -13,7 +13,7 @@ const nextConfig = {
           {
             key: 'X-Frame-Options',
             value: 'ALLOW-FROM https://*.pinet.com',
-          },
+          }
         ],
       },
     ];
@@ -21,4 +21,3 @@ const nextConfig = {
 };
 
 export default nextConfig;
-
